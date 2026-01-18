@@ -14,17 +14,20 @@
     box-sizing: border-box;
 }
 
+/* ✅ SCROLL FIX HERE */
 body {
-    height: 100vh;
+    min-height: 100vh;
     background: radial-gradient(circle at top, #1a1a2e, #000);
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding: 40px 0;
 }
 
-/* 🔥 Background flashing images (9:16 feel) */
+/* 🔥 Background flashing images */
 .bg-slider {
     position: fixed;
     inset: 0;
@@ -76,6 +79,7 @@ body {
     z-index: 2;
 }
 
+/* Headings */
 h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 4rem;
@@ -90,11 +94,11 @@ h2 {
     animation: fadeIn 3s ease;
 }
 
-/* 9:16 slider */
+/* 9:16 Image slider */
 .slider {
     width: 260px;
     height: 462px;
-    margin: 0 auto 25px;
+    margin: 0 auto 30px;
     border-radius: 22px;
     overflow: hidden;
     box-shadow: 0 30px 70px rgba(255,126,179,0.45);
@@ -112,20 +116,22 @@ h2 {
     to { transform: scale(1.1); }
 }
 
+/* Message */
 .message {
     font-size: 1.15rem;
     line-height: 1.9;
     color: #f1f1f1;
     animation: fadeInUp 4s ease;
-    margin-top: 10px;
+    padding: 0 10px;
 }
 
 .signature {
-    margin-top: 20px;
+    margin: 25px 0;
     font-size: 0.9rem;
     opacity: 0.7;
 }
 
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -140,7 +146,7 @@ h2 {
 
 <body>
 
-<!-- 🎵 Birthday music -->
+<!-- 🎵 Birthday Music -->
 <audio autoplay loop>
     <source src="bday.mp3" type="audio/mpeg">
 </audio>
@@ -154,7 +160,7 @@ h2 {
     <img src="shalvi5.jpg">
 </div>
 
-<!-- hearts -->
+<!-- Floating hearts -->
 <script>
 for (let i = 0; i < 30; i++) {
     let heart = document.createElement("div");
@@ -176,20 +182,18 @@ for (let i = 0; i < 30; i++) {
     </div>
 
     <div class="message">
-        Today is not just about candles, cakes, or wishes.  
-        It’s about celebrating **you** — the smile that makes moments softer,  
-        the kindness that stays even when no one notices,  
-        and the little magic you bring into ordinary days.  
+        Today isn’t just about a date on the calendar —  
+        it’s about celebrating someone who quietly makes everything brighter.  
         <br><br>
-        You have this quiet way of making people feel seen,  
-        this warmth that doesn’t try too hard — it just exists.  
-        And honestly, the world feels a bit prettier  
-        simply because you’re in it.  
+        Your smile has this way of softening moments,  
+        your presence makes ordinary days feel a little more special,  
+        and your kindness shows even when you don’t try to show it.  
         <br><br>
-        May this year give you reasons to smile even brighter,  
-        dreams that feel closer,  
-        and moments that you’ll want to pause and relive.  
-        Stay the way you are — effortlessly special. 💖
+        May this year bring you laughter that stays longer,  
+        dreams that feel closer than ever,  
+        and memories you’ll want to hold onto forever.  
+        Never forget how effortlessly amazing you are —  
+        just by being you. 💖
     </div>
 
     <div class="signature">

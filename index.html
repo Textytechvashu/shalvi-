@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Shalvi 💖</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at top, #1a1a2e, #000);
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔥 Background flashing images (9:16 feel) */
+.bg-slider {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.18;
+}
+
+.bg-slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: bgFade 20s infinite;
+}
+
+.bg-slider img:nth-child(1) { animation-delay: 0s; }
+.bg-slider img:nth-child(2) { animation-delay: 4s; }
+.bg-slider img:nth-child(3) { animation-delay: 8s; }
+.bg-slider img:nth-child(4) { animation-delay: 12s; }
+.bg-slider img:nth-child(5) { animation-delay: 16s; }
+
+@keyframes bgFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    20% { opacity: 1; }
+    30% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    color: rgba(255, 105, 180, 0.6);
+    font-size: 20px;
+    animation: float 8s linear infinite;
+    z-index: 1;
+}
+
+@keyframes float {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: #ff7eb3;
+    text-shadow: 0 0 25px rgba(255,126,179,0.8);
+    animation: fadeIn 2s ease;
+}
+
+h2 {
+    font-weight: 300;
+    margin-bottom: 25px;
+    animation: fadeIn 3s ease;
+}
+
+/* 9:16 slider */
+.slider {
+    width: 260px;
+    height: 462px;
+    margin: 0 auto 25px;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(255,126,179,0.45);
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoom 6s infinite alternate;
+}
+
+@keyframes zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+.message {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #f1f1f1;
+    animation: fadeInUp 4s ease;
+    margin-top: 10px;
+}
+
+.signature {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Birthday music -->
+<audio autoplay loop>
+    <source src="bday.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Background images -->
+<div class="bg-slider">
+    <img src="shalvi1.jpg">
+    <img src="shalvi2.jpg">
+    <img src="shalvi3.jpg">
+    <img src="shalvi4.jpg">
+    <img src="shalvi5.jpg">
+</div>
+
+<!-- hearts -->
+<script>
+for (let i = 0; i < 30; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.fontSize = (12 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+}
+</script>
+
+<div class="container">
+    <h1>Happy Birthday</h1>
+    <h2>Shalvi ✨</h2>
+
+    <div class="slider">
+        <img id="slide" src="shalvi1.jpg">
+    </div>
+
+    <div class="message">
+        Today is not just about candles, cakes, or wishes.  
+        It’s about celebrating **you** — the smile that makes moments softer,  
+        the kindness that stays even when no one notices,  
+        and the little magic you bring into ordinary days.  
+        <br><br>
+        You have this quiet way of making people feel seen,  
+        this warmth that doesn’t try too hard — it just exists.  
+        And honestly, the world feels a bit prettier  
+        simply because you’re in it.  
+        <br><br>
+        May this year give you reasons to smile even brighter,  
+        dreams that feel closer,  
+        and moments that you’ll want to pause and relive.  
+        Stay the way you are — effortlessly special. 💖
+    </div>
+
+    <div class="signature">
+        — Someone who truly cares
+    </div>
+</div>
+
+<script>
+let images = ["shalvi1.jpg","shalvi2.jpg","shalvi3.jpg","shalvi4.jpg","shalvi5.jpg"];
+let i = 0;
+setInterval(() => {
+    i = (i + 1) % images.length;
+    document.getElementById("slide").src = images[i];
+}, 2500);
+</script>
+
+</body>
+</html>
